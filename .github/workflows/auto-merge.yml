@@ -10,8 +10,6 @@ jobs:
       pull-requests: write
     if: github.actor == 'dependabot[bot]' && github.event.pull_request.head.repo.full_name == github.repository
     steps:
-      - name: Wait for checks
-        run: sleep 120
       - name: "Enable Auto-Merge"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
