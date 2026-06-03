@@ -18,3 +18,4 @@ jobs:
         run: |
           gh pr merge --repo $REPOSITORY $PR_NUMBER --auto --squash || true
           gh pr review $PR_NUMBER --body "Auto-approved by auto-approve.yml" --approve --repo $REPOSITORY
+          sleep 120 # test to see if we keep this job alive if it will allow the merge queue entry
